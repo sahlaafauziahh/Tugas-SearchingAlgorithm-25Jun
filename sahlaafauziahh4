@@ -1,0 +1,36 @@
+def binary_search(arr, nilai):
+    
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+    
+    while low <= high:
+        mid = (high + low) // 2
+        
+        # jika nilai berada di tengah
+        if arr[mid] < nilai:
+            low = mid + 1
+            
+        # jika nilai berada di sebelah kiri tengah
+        elif arr[mid] > nilai:
+            high = mid - 1
+            
+        # nilai ditemukan
+        else:
+            return mid
+            
+        # nilai tidak ditemukan
+    return -1
+        
+# daftar nilai
+arr = [65, 75, 85, 95]
+nilai = 100
+
+result = binary_search(arr, nilai)
+
+if result != -1:
+    print(f"Nilai siswa {nilai} ditemukan pada index {result}")
+else:
+    print("Nilai siswa tidak ditemukan dalam daftar index")
+            
+        
