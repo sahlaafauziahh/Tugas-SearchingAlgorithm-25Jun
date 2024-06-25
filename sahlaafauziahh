@@ -1,0 +1,20 @@
+def sequential_search(buku, target_buku):
+    for index, buku in enumerate(buku):
+        if buku == target_buku:
+            return index
+    return -1
+    
+# daftar nama buku
+buku_names = ["sejarah", "pelajaran", "fiksi", "non fiksi", "resep"]
+
+# buku yang akan dicari
+search_buku = "matematika"
+
+# melakukan pencarian sequential
+result = sequential_search(buku_names, search_buku)
+
+# menampilkan hasil pencarian
+if result != -1:
+    print(f"nama buku {search_buku} ditemukan pada index {result}.")
+else:
+    print(f"nama buku {search_buku} tidak ditemukan dalam daftar.")
